@@ -15,14 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
 
-Route::get('/register', function () {
-    return view('auth.register');
-});
+Route::get('/login','loginController@login');
+Route::get('/register','registerController@register');
+Route::get('/home','homeController@index');
+
+
+//Route::get('/login', function () {
+//    return view('auth.login');
+//});
+
+//Route::get('/home', function () {
+//    return view('home');
+//});
+
+//Route::get('/register', function () {
+//    return view('auth.register');
+//});
