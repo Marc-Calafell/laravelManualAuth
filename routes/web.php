@@ -19,17 +19,16 @@ Route::get('/', function () {
 
 Route::get('/login','loginController@login');
 Route::get('/register','registerController@register');
-Route::get('/home','homeController@index');
-//Route::get('/path','pahtController@index');
+//Route::get('/index','homeController@index');
 
 
 //Route::get('/login', function () {
 //    return view('auth.login');
 //});
 
-//Route::get('/home', function () {
-//    return view('home');
-//});
+Route::get('/home', function () {
+    return view('auth.home');
+});
 
 //Route::get('/register', function () {
 //    return view('auth.register');

@@ -31,11 +31,18 @@ class homeController extends Controller
      //   $query = $pdo->prepare('SELECT * FROM users WHERE id=77');
        // $query->execute();
        // $row = $query->fetch();
+        if(auth::check()) {
 
+            $user = User::find(1);
+            return view('home')
+                ->withUser($user);
+        } else{
+            $user=new \stdClass();
+            $user->name = "asdasd";
+            return view('auth.home');
 
-        $user = User::find(1);
-        return view('home')
-            ->withUser($user);
+        }
+
 
     }
 }
