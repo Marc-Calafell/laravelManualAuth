@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/login','loginController@login');
 Route::get('/register','registerController@register');
 Route::get('/home','homeController@index');
+//Route::get('/path','pahtController@index');
 
 
 //Route::get('/login', function () {
@@ -33,3 +34,4 @@ Route::get('/home','homeController@index');
 //Route::get('/register', function () {
 //    return view('auth.register');
 //});
+
