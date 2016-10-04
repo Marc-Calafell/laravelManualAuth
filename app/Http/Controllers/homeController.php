@@ -25,16 +25,14 @@ class homeController extends Controller
         //return view('auth.home')-> withUsername($data['username']);
        // return view('auth.home')-> withUsername($user);
 
-        $user->name = "asdasd";
+       // $user->name = "asdasd";
         $pdo = new PDO('sqlite:/home/marc/Codi/laravelManualAuth/database/database.sqlite');
-        $query = $pdo->prepare('SELECT * FROM users WHERE id=1');
+        $query = $pdo->prepare('SELECT * FROM users WHERE id=77');
         $query->execute();
         $row = $query->fetch();
-        dd($row);
 
-        $user = new \stdClass();
-        $user->name = "Marc";
-        $user->sn1 = "Calafell";
+
+        $user = User::find(1);
         return view('home')
             ->withUser($user);
 
