@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['middleware']-> ['auth']){
 
+}
 
 Route::get('/login','loginController@login');
 Route::get('/register','registerController@register');

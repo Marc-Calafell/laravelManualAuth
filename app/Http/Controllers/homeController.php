@@ -19,18 +19,7 @@ use PDO;
 class homeController extends Controller
 {
     function index () {
-       // $data= ['username'=>'Marc'];
-       // $user= User::find();
 
-
-        //return view('auth.home')-> withUsername($data['username']);
-       // return view('auth.home')-> withUsername($user);
-
-       // $user->name = "asdasd";
-      //  $pdo = new PDO('sqlite:/home/marc/Codi/laravelManualAuth/database/database.sqlite');
-     //   $query = $pdo->prepare('SELECT * FROM users WHERE id=77');
-       // $query->execute();
-       // $row = $query->fetch();
         if(auth::check()) {
 
             $user = User::find(1);
