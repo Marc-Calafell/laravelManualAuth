@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use app\Http\Requests;
 use PDO;
 
 //class Usuari{
@@ -22,8 +22,15 @@ class homeController extends Controller
 
         $user=$this -> getUser();
 
+        if(this->userIsAuthenticated()){
 
-        return view('home')->withUser($user);
+            return view('home')->withUser($user);
+        } else {
+           return redirect('login');
+
+        }
+
+
 
 
     }
@@ -34,4 +41,20 @@ class homeController extends Controller
         return $_GET['user'];
 
     }
+
+    private function userIsAuthenticated(){
+
+        if (isset($_GET['user'])){
+            return true;
+
+        } else{
+            return false;
+
+        }
+
+
+
+    }
+
+
 }
