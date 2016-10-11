@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('main-content')
-    Hola
+    Hola {{$user}}
 
 @endsection
 

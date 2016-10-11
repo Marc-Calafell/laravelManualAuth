@@ -18,11 +18,16 @@ use PDO;
 
 class homeController extends Controller
 {
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     function index () {
 
         $user=$this -> getUser();
 
-        if(this->userIsAuthenticated()){
+        //  $user = Auth::user();
+        //ESTAT SESSIO
+        if ($this->userIsAuthenticated()){
 
             return view('home')->withUser($user);
         } else {
@@ -31,14 +36,13 @@ class homeController extends Controller
         }
 
 
-
-
     }
 
     private function getUser() {
 
         //opcio1
-        return $_GET['user'];
+        dd(json_encode($_GET['user']));
+        return json_decode($_GET['user']);
 
     }
 
