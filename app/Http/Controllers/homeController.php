@@ -20,18 +20,18 @@ class homeController extends Controller
 {
     function index () {
 
-        if(auth::check()) {
+        $user=$this -> getUser();
 
-            $user = User::find(1);
-            return view('home')
-                ->withUser($user);
-        } else{
-            $user=new \stdClass();
-            $user->name = "asdasd";
-            return view('auth.home');
 
-        }
+        return view('home')->withUser($user);
 
+
+    }
+
+    private function getUser() {
+
+        //opcio1
+        return $_GET['user'];
 
     }
 }
