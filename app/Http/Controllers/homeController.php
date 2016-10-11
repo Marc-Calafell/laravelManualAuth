@@ -25,24 +25,27 @@ class homeController extends Controller
 
         $user=$this -> getUser();
 
-        //  $user = Auth::user();
-        //ESTAT SESSIO
-        if ($this->userIsAuthenticated()){
+        //$user = Auth::user();
 
+        if ($this->userIsAuthenticated()){
             return view('home')->withUser($user);
         } else {
            return redirect('login');
 
         }
-
+// user='{"name":"Marc","sn1":"Calafell"}'
 
     }
 
     private function getUser() {
 
         //opcio1
-        dd(json_encode($_GET['user']));
-        return json_decode($_GET['user']);
+        //dd(json_encode($_GET['user']));
+        //return json_decode($_GET['user']);
+        $id=$_GET['user'];
+        return User::findOrFail($id);
+
+
 
     }
 
