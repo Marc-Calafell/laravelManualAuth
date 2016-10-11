@@ -25,7 +25,7 @@ class homeController extends Controller
     function index () {
 
         $user=$this -> getUser();
-
+        //set->
         //$user = Auth::user();
 
         if ($this->userIsAuthenticated()){
@@ -43,12 +43,20 @@ class homeController extends Controller
         //opcio1
         //dd(json_encode($_GET['user']));
         //return json_decode($_GET['user']);
-        $id=$_GET['user'];
-        return User::findOrFail($id);
 
+        //$id=$_GET['user'];
+       // return User::findOrFail($id);
 
+        json_encode($_COOKIE['user']);
 
     }
+
+    private function setUserCookies(){
+        $user = User::find(1);
+        setCookies('user',json_encode($user));
+
+    }
+
 
     private function userIsAuthenticated(){
 
