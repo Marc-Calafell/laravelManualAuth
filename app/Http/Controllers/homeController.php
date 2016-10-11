@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
 use app\Http\Requests;
-use PDO;
+//use PDO;
 
 //class Usuari{
 //    public $name,$sn1,$sn2;
