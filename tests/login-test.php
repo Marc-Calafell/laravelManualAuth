@@ -18,9 +18,17 @@ class LoginTest extends TestCase
 
     protected function createTestUser(){
 
-      return factory(App\User::class,1)->create();;
+      return factory(App\User::class,1)->create(['password'->]);
 
     }
 
+    public function testLoginPostWithUserOk() {
+        $user = $this->createTestUser();
+        $this->visit(/login)
+        ->type($user->name)
+            ->type('123456','password')
+            ->press('login')
+            ->seepage('/home')
+    }
 
 }
