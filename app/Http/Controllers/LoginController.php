@@ -8,8 +8,14 @@ use App\Http\Requests;
 
 class LoginController extends Controller
 {
-    public function login()
+    public function showLoginForm()
     {
         return view('auth.login');
     }
+
+    public function login()
+    {
+        return 'Holas';
+    }
+
 }
