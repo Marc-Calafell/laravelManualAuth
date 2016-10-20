@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,3 +29,6 @@
 
 </body>
 </html>
+=======
+logease aqui
+>>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b

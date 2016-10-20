@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "42ffebafd4cbd5ca1a665610d40a488e",
     "content-hash": "82644a7e8fa39a1f4eee9418a1106549",
     "packages": [
@@ -177,6 +178,12 @@
             "time": "2016-06-13 19:28:20"
         },
         {
+=======
+    "hash": "ed9df8b872992035f068a7fe461a635a",
+    "content-hash": "76036da3b5b55b91dbe1e1affa01bf9e",
+    "packages": [
+        {
+>>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
             "source": {
@@ -687,6 +694,7 @@
             "time": "2016-08-10 08:55:11"
         },
         {
+<<<<<<< HEAD
             "name": "maximebf/debugbar",
             "version": "v1.13.0",
             "source": {
@@ -748,6 +756,8 @@
             "time": "2016-09-15 14:01:59"
         },
         {
+=======
+>>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
             "name": "monolog/monolog",
             "version": "1.21.0",
             "source": {
@@ -1268,6 +1278,7 @@
             "time": "2016-07-08 11:51:25"
         },
         {
+<<<<<<< HEAD
             "name": "symfony/class-loader",
             "version": "v3.1.4",
             "source": {
@@ -1324,6 +1335,8 @@
             "time": "2016-08-23 13:39:15"
         },
         {
+=======
+>>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
             "name": "symfony/console",
             "version": "v3.1.4",
             "source": {

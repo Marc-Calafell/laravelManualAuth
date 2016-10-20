@@ -178,6 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+<<<<<<< HEAD
         /*
          * Acacha Llum Service Providers...
          *
@@ -187,6 +188,8 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         #llum_providers
 
+=======
+>>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
     ],
 
     /*
@@ -235,6 +238,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+<<<<<<< HEAD
         /*
          * Acacha Llum Aliases...
          *
@@ -243,6 +247,8 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         #llum_aliases
 
+=======
+>>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
     ],
 
 ];

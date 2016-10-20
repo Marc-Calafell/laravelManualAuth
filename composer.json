@@ -6,9 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+<<<<<<< HEAD
         "laravel/framework": "5.3.*",
         "barryvdh/laravel-ide-helper": "^2.2",
         "barryvdh/laravel-debugbar": "^2.3"
+=======
+        "laravel/framework": "5.3.*"
+>>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
