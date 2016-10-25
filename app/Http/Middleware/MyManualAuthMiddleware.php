@@ -9,12 +9,16 @@
 namespace App\Http\Middleware;
 
 
+use Closure;
+use ManualGuard;
+
 class MyManualAuthMiddleware
 {
 
     public function handle($request, Closure $next)
     {
-        if ($request->has('id')){
+        $manualGuard= new ManualGuard();
+        if ($manualGuard->check()){
             return $next($request);
 
         }
@@ -22,5 +26,4 @@ class MyManualAuthMiddleware
         redirect('login');
     }
 
-}
 }
