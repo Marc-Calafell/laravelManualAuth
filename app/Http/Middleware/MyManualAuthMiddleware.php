@@ -15,10 +15,18 @@ use ManualGuard;
 class MyManualAuthMiddleware
 {
 
-    public function handle($request, Closure $next,ManualGuard $manualGuard)
-    {
 
-        if ($manualGuard->check()){
+    /**
+     * MyManualAuthMiddleware constructor.
+     */
+    public function __construct(ManualGuard $manualGuard)  {
+        $this->manualGuard=$manualGuard;
+
+    }
+
+    public function handle($request, Closure $next) {
+
+        if ($this->manualGuard->check()){
             return $next($request);
 
         }
