@@ -10,23 +10,26 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-<<<<<<< HEAD
-=======
 
->>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/tasques', function () {
+    return view('tasques');
+});
 
-<<<<<<< HEAD
+
 Auth::logout();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/login', 'LoginController@showLoginForm');
 Route::post('/login', 'LoginController@login');
 //Route::get('/register', 'RegisterController@register');
-=======
+
 Route::get('/login','loginController@login');
 Route::get('/register','registerController@register');
 //Route::get('/index','homeController@index');
@@ -44,4 +47,3 @@ Route::get('/home', function () {
 //    return view('auth.register');
 //});
 
->>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b

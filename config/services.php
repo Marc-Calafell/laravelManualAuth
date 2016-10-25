@@ -35,7 +35,7 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
-<<<<<<< HEAD
+
     /*
     | Acacha Llum services...
     |
@@ -45,6 +45,4 @@ return [
     #llum_services
 
 
-=======
->>>>>>> 34143ee5ff6ddc5397a4109d92d80d337116d96b
 ];
