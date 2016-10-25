@@ -12,7 +12,7 @@ namespace App\Http\Middleware;
 use Closure;
 use ManualGuard;
 
-class MyManualAuthMiddleware
+class MyManualAuthMiddleware implements Guard
 {
 
 
