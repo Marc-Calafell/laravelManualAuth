@@ -13,6 +13,11 @@
 
 
 
+Route::group(['middleware'=>'manualAuth'],function (){
+    Route::get('/tasques', function () {
+        return view('tasques');
+    });
+});
 
 
 
@@ -20,9 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tasques', function () {
-    return view('tasques');
-});
+
 
 
 Auth::logout();

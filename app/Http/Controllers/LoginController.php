@@ -15,8 +15,15 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function login()
-    {
+    public function login(Request $request) {
+
+
+
+
+
+
+
+        /*
         try {
             $user = User::where(['email' => $request->input('email')])->firstOrFail();
 
@@ -34,7 +41,10 @@ class LoginController extends Controller
         }
 
 
-        echo 'Holas';
+        echo 'Holas';*/
+
+
+
     }
 
 }
