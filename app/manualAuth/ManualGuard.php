@@ -18,6 +18,7 @@ class ManualGuard
 
     public function check()
     {
-        return true;
+        return isset($_COOKIE['user']) ? true : false;
+
     }
 }

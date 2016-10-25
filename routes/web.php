@@ -12,6 +12,8 @@
 */
 
 
+Route::group('middleware')
+
 
 
 Route::get('/', function () {

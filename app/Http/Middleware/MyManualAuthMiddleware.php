@@ -15,9 +15,9 @@ use ManualGuard;
 class MyManualAuthMiddleware
 {
 
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next,ManualGuard $manualGuard)
     {
-        $manualGuard= new ManualGuard();
+
         if ($manualGuard->check()){
             return $next($request);
 
