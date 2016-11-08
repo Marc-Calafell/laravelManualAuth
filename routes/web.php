@@ -11,44 +11,34 @@
 |
 */
 
-
-
-Route::group(['middleware'=>'manualAuth'],function (){
-    Route::get('/tasques', function () {
-        return view('tasques');
-    });
-});
-
-
+use App\User;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+//$user = User::findOrFail(1);
+//setcookie('user',$user->token);
 
 
-
-Auth::logout();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/login', 'LoginController@showLoginForm');
-Route::post('/login', 'LoginController@login');
-//Route::get('/register', 'RegisterController@register');
-
-Route::get('/login','loginController@login');
-Route::get('/register','registerController@register');
-//Route::get('/index','homeController@index');
-
-
-//Route::get('/login', function () {
-//    return view('auth.login');
-//});
-
-Route::get('/home', function () {
-    return view('auth.home');
+Route::group(['middleware' => 'manualauth'], function () {
+    Route::get('/tasques', function () {
+        return view('tasques');
+    });
 });
 
-//Route::get('/register', function () {
-//    return view('auth.register');
-//});
+Route::get('/login', 'LoginController@showLoginForm');
+Route::post('/login', 'LoginController@login');
 
+//PAS 1? Middleware? Com protegir pàgines?
+
+////Auth::loginUsingId(4);
+//Auth::logout();
+//
+//Route::get('/home', 'HomeController@index');
+//Route::get('/login', 'LoginController@showLoginForm');
+//Route::post('/login', 'LoginController@login');
+//
+////Route::get('/register', 'RegisterController@register');
+
+//PAS 2? User Providers Login /Register

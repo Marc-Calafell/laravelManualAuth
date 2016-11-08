@@ -1,37 +1,37 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mark
- * Date: 25/10/16
- * Time: 19:54
- */
 
 namespace App\Http\Middleware;
 
-
+use App\ManualAuth\Guard;
 use Closure;
-use ManualGuard;
 
-class MyManualAuthMiddleware implements Guard
+class MyManualAuthMiddleware
 {
 
+    protected $manualGuard;
 
     /**
      * MyManualAuthMiddleware constructor.
+     * @param $manualGuard
      */
-    public function __construct(ManualGuard $manualGuard)  {
-        $this->manualGuard=$manualGuard;
-
+    public function __construct(Guard $manualGuard)
+    {
+        $this->manualGuard = $manualGuard;
     }
 
-    public function handle($request, Closure $next) {
 
-        if ($this->manualGuard->check()){
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if ( $this->manualGuard->check() ) {
             return $next($request);
-
         }
-        dd("BBB");
-        redirect('login');
+        return redirect('login');
     }
-
 }

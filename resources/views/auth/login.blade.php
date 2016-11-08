@@ -1,32 +1,46 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
     <link rel="stylesheet" href="css/app.css">
+    <title>Document</title>
 </head>
 <body>
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-    <form action="/login" method="post">
-        Correu electronic: <input type="text" name="Mail" ><br>
-        Nom: <input type="text" name="Usuari" ><br>
-        Password<input type="password" name="Pass" ><br>
-        <input type="submit" name="login"  class="btn" value="submit"><br>
-    </form>
-    </div>
+        <form action="/login" method="POST">
+            {{ csrf_field() }}
+            <div class="form-group">
+                Email :
+                <input type="text" name="email">
+            </div>
+            <div class="form-group">
+                Password : <input type="password" name="password" >
+            </div>
+            <div class="row text-center">
+                <input type="submit" value="Login" class="btn btn-primary" name="login">
+            </div>
+        </form></div>
     <div class="col-md-4"></div>
-</div>
 
+</div>
 
 
 </body>
 </html>
-

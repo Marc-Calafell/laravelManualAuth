@@ -13,22 +13,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        //S SOLID
-        //SRP: Single Responsability Principle
-        //Passos controlador bàsic (glue/cola del model i vista):
-        // 1) Aconseguir informació de l'usuari de la base de dades
-        // 2) Mostrar vista home passant info del usuari
+        return view('home');
 
-        $this->setUserCookie();
-
-        //ESTAT SESSIÓ
-        if ($this->userIsAuthenticated()) {
-            $user = $this->getUser();
-            return view('home')
-                ->withUser($user);
-        } else {
-            return redirect('login');
-        }
 
     }
 
@@ -45,15 +31,5 @@ class HomeController extends Controller
         return User::where(["token" => $token])->first();
     }
 
-    private function userIsAuthenticated()
-    {
-        //Operador ternari
-        return isset($_COOKIE['user']) ? true : false;
 
-//        if(isset($_COOKIE['user'])) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-    }
 }
