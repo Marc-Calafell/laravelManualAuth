@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -31,16 +30,16 @@
                 <input type="text" name="email">
             </div>
             <div class="form-group">
-                Password : <input type="password" name="password" >
+                Password :
+                <input type="password">
             </div>
             <div class="row text-center">
                 <input type="submit" value="Login" class="btn btn-primary" name="login">
             </div>
-        </form></div>
+        </form>
+    </div>
     <div class="col-md-4"></div>
-
 </div>
-
 
 </body>
 </html>
