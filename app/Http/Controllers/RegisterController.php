@@ -10,6 +10,17 @@ class RegisterController extends Controller
 {
     public function register()
     {
-        echo "Register called!";
+        return view('auth.register');
+    }
+
+    /**
+     *
+     */
+    public function showRegister()
+    {
+        var_dump($_POST);
+
+
+
     }
 }
