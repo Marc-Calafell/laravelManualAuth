@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class LoginTest extends TestCase
 {
-    use DatabaseMigrations;    // Per assegurar-mos que les taules existeixen
+    use DatabaseMigrations;
 
     public function testLoginPageShowsLoginForm()
     {
@@ -17,26 +17,26 @@ class LoginTest extends TestCase
     }
 
     protected function createTestUser() {
-        factory(\App\User::class,1)->create(['password' => bcrypt('123456')]);
+        return factory(App\User::class)->create(['password' => bcrypt('123456')]);
     }
 
     public function testLoginPostWithUserOk()
     {
         $user = $this->createTestUser();
-        $this->visit('login')
+        $this->visit('/login')
             ->type($user->email, 'email' )
-            ->type('123456', 'password' )
+            ->type('123456','password')
             ->press('login')
             ->seePageIs('/home');
     }
 
     public function testLoginPostWithUserNotOk()
     {
-        $this->visit('login')
-            ->type('pepito@gmail.com', 'email' )
-            ->type('123456', 'password' )
+        $this->visit('/login')
+            ->type('pepitopalotes@gmail.com', 'email' )
+            ->type('123456','password')
             ->press('login')
-//            ->see('Username not exists')
-            ->seePageIs('/home');
+            ->seePageIs('/login');
+//            ->see('Username not exists');
     }
 }

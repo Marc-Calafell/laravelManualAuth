@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-    Home
+    Títol de la pàgina
 @endsection
 
 @section('main-content')
-    Hola {{ $user->name }}
+    Hola
 @endsection

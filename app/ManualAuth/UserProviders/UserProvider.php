@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: franc
- * Date: 25/10/16
- * Time: 20:33
- */
 
-namespace app\ManualAuth\UserProvider;
+namespace App\ManualAuth\UserProviders;
 
-interface UserProvider {
-
+interface UserProvider
+{
     public function validate(array $credentials);
 
+    public function getUserByCredentials(array $credentials);
 }

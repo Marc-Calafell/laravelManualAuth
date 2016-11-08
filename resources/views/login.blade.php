@@ -1,3 +1,3 @@
 <?php
 
-        echo "Aquí va el login";
+echo "Aquí va el login";

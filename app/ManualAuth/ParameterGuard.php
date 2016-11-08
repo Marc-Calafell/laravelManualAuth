@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: franc
- * Date: 25/10/16
- * Time: 20:06
- */
 
 namespace App\ManualAuth;
 
@@ -16,14 +10,13 @@ class ParameterGuard implements Guard
     protected $request;
 
     /**
-     * ManualGuardByIdParameter constructor.
+     * ParameterGuard constructor.
      * @param $request
      */
     public function __construct(Request $request)
     {
         $this->request = $request;
     }
-
 
     public function check()
     {

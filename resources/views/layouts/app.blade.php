@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
-@section('htmlheader')
-    @include('layouts.partials.htmlheader')
-@endsection
+
+@include('layouts.partials.htmlheader')
+
 <body>
 
-@include('layouts.partials.htmlsidebar')
+@include('layouts.partials.sidebar')
 
 @yield('main-content')
 
-@include('layouts.partials.htmlfooter')
+@include('layouts.partials.footer')
 
 </body>
 </html>
