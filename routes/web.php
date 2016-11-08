@@ -38,6 +38,7 @@ Route::post('/login', 'LoginController@login');
 //Route::get('/login', 'LoginController@showLoginForm');
 //Route::post('/login', 'LoginController@login');
 //
-////Route::get('/register', 'RegisterController@register');
 
+Route::get('/register', 'RegisterController@register');
+Route::post('/register', 'RegisterController@showRegister');
 //PAS 2? User Providers Login /Register
