@@ -31,19 +31,25 @@ class LoginController extends Controller
      * @param $guard
      * @param $userprovider
      */
-    public function __construct(Guard $guard, UserProvider $userprovider)
-    {
+    public function __construct(Guard $guard, UserProvider $userprovider)  {
         $this->guard = $guard;
         $this->userprovider = $userprovider;
     }
 
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showLoginForm()
     {
         return view('auth.login');
     }
 
     // DEPENDENCY INJECTION
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function login(Request $request)
     {
         $this->validateLogin($request);
@@ -80,6 +86,9 @@ class LoginController extends Controller
         return $this->username;
     }
 
+    /**
+     * @param $request
+     */
     private function validateLogin($request)
     {
         $this->validate($request, [
