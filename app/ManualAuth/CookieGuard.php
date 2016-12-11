@@ -32,4 +32,9 @@ class CookieGuard implements Guard
     {
         setcookie('user',$user->token);
     }
+
+    public function logout()
+	    {
+	        \Cookie::forget('user');
+	    }
 }

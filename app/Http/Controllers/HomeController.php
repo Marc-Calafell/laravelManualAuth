@@ -1,38 +1,29 @@
 <?php
 
-/*
- * Taken from
- * https://github.com/laravel/framework/blob/5.3/src/Illuminate/Auth/Console/stubs/make/controllers/HomeController.stub
- */
-
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 
-/**
- * Class HomeController
- * @package App\Http\Controllers
- */
+use App\Http\Requests;
+
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return Response
-     */
     public function index()
     {
-        return view('adminlte::home');
+        return view('home');
+
+
     }
+
+    private function getUser()
+    {
+        //Opció 1 : query string $_GET
+        $token = $_COOKIE['user'];
+        return User::where(["token" => $token])->first();
+    }
+
+
 }

@@ -9,4 +9,6 @@ interface Guard
     public function validate(array $credentials);
 
     public function setUser($user);
+
+    public function logout();
 }

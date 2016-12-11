@@ -1,16 +1,9 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
-
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
-/**
- * Class RegisterController
- * @package %%NAMESPACE%%\Http\Controllers\Auth
- */
 class RegisterController extends Controller
 {
     /*
@@ -23,26 +16,13 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
-
-    /**
-     * Show the application registration form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showRegistrationForm()
-    {
-        return view('adminlte::auth.register');
-    }
-
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
     protected $redirectTo = '/home';
-
     /**
      * Create a new controller instance.
      *
@@ -52,7 +32,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -65,10 +44,8 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'terms' => 'required',
         ]);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
